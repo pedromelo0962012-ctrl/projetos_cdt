@@ -180,7 +180,7 @@ CARDAPIO_PADRAO = [
 
 class SistemaGourmetApp:
 
-    def _init_(self, root):
+    def __init__(self, root):
         self.root = root
         self.root.title("Gourmet Service - Sistema de Pedidos")
         try:
@@ -812,13 +812,13 @@ class SistemaGourmetApp:
         )
 
         mensagem = (
-            f"🤖 NOVO PEDIDO RECEBIDO #{pedido['id']}\n\n"
-            f"👤 Cliente: {pedido['cliente']}\n"
-            f"📅 Data: {pedido['data_hora']}\n\n"
-            f"🛒 ITENS DO PEDIDO:\n{itens_txt}\n\n"
-            f"💰 TOTAL: R$ {pedido['total']:.2f}\n"
-            f"💳 Pagamento: {pedido['forma_pagamento']}\n\n"
-            f"📍 ENDEREÇO DE ENTREGA:\n"
+            f"🤖 *NOVO PEDIDO RECEBIDO #{pedido['id']}*\n\n"
+            f"👤 *Cliente:* {pedido['cliente']}\n"
+            f"📅 *Data:* {pedido['data_hora']}\n\n"
+            f"🛒 *ITENS DO PEDIDO:*\n{itens_txt}\n\n"
+            f"💰 *TOTAL:* R$ {pedido['total']:.2f}\n"
+            f"💳 *Pagamento:* {pedido['forma_pagamento']}\n\n"
+            f"📍 *ENDEREÇO DE ENTREGA:*\n"
             f"Rua: {pedido['endereco']}, Nº {pedido['numero']}\n"
             f"CEP: {pedido['cep']}"
         )
@@ -840,7 +840,7 @@ class SistemaGourmetApp:
 
 # ===================== EXECUÇÃO DO PROGRAMA =====================
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     inicializar_banco()
     root = tk.Tk()
     app = SistemaGourmetApp(root)
